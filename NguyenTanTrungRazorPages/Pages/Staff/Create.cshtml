@@ -1,0 +1,84 @@
+﻿@page
+@model NguyenTanTrungRazorPages.Pages.Staff.CreateModel
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<div class="card">
+    <div class="card-header ">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-black-50">Create Car</strong>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="car.CarName" class="control-label"></label>
+                <input asp-for="car.CarName" class="form-control" />
+                <span asp-validation-for="car.CarName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.CarModelYear" class="control-label"></label>
+                <input asp-for="car.CarModelYear" class="form-control" />
+                <span asp-validation-for="car.CarModelYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.Color" class="control-label"></label>
+                <input asp-for="car.Color" class="form-control" />
+                <span asp-validation-for="car.Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.Capacity" class="control-label"></label>
+                <input asp-for="car.Capacity" class="form-control" />
+                <span asp-validation-for="car.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.Description" class="control-label"></label>
+                <input asp-for="car.Description" class="form-control" />
+                <span asp-validation-for="car.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.ImportDate" class="control-label"></label>
+                <input asp-for="car.ImportDate" class="form-control"/>
+                <span asp-validation-for="car.ImportDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.RentPrice" class="control-label"></label>
+                <input asp-for="car.RentPrice" class="form-control" />
+                <span asp-validation-for="car.RentPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="car.Status">Status</label>
+                    <select class="form-control" id="status" asp-for="car.Status" required>
+                        <option value="1">Available</option>
+                        <option value="0">Not Available</option>
+                    </select>
+                <span asp-validation-for="car.Status" class="text-danger"></span>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="producer">Producer</label>
+                <select class="form-control" asp-for="car.ProducerId">
+                   @foreach (var producer in Model.producers){
+                    <option value="@producer.ProducerId">@producer.ProcuderName</option>
+                   }
+                </select>
+                <span asp-validation-for="car.ProducerId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" /> |
+                <a asp-page="Index">Back to List</a>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+

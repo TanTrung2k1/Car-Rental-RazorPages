@@ -1,0 +1,67 @@
+﻿@page
+@model NguyenTanTrungRazorPages.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register customer page";
+}
+
+<div class="card">
+    <div class="card-header ">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-black-50">Register account</strong>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="customer.CustomerName" class="control-label"></label>
+                <input asp-for="customer.CustomerName" class="form-control" />
+                <span asp-validation-for="customer.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.Mobile" class="control-label"></label>
+                <input asp-for="customer.Mobile" class="form-control" />
+                <span asp-validation-for="customer.Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.CustomerEmail" class="control-label"></label>
+                <input asp-for="customer.CustomerEmail" class="form-control" />
+                <span asp-validation-for="customer.CustomerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.CustomerPassword" class="control-label"></label>
+                <input asp-for="customer.CustomerPassword" class="form-control" />
+                <span asp-validation-for="customer.CustomerPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <labelclass="control-label">Confirm password</label>
+                <input type="password" asp-for="@Model.confirmPass" class="form-control" />
+                <span asp-validation-for="confirmPass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.IdentityCard" class="control-label"></label>
+                <input asp-for="customer.IdentityCard" class="form-control" />
+                <span asp-validation-for="customer.IdentityCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.LicenceNumber" class="control-label"></label>
+                <input asp-for="customer.LicenceNumber" class="form-control" />
+                <span asp-validation-for="customer.LicenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer.LicenceDate" class="control-label"></label>
+                <input asp-for="customer.LicenceDate" class="form-control" />
+                <span asp-validation-for="customer.LicenceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-page="Login">You have a account? Login now</a>
+        </div>
+    </div>
+</div>
